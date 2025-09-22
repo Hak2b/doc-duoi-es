@@ -299,8 +299,9 @@
     <script>
         // Use a self-contained closure to avoid polluting the global namespace
         (() => {
-            // Danh sách 100 từ vựng (động từ số ít)
+            // Danh sách 100 từ vựng (động từ số ít) đã được kiểm tra và chỉnh sửa
             const verbList = [
+                // Phát âm là /iz/
                 { word: 'washes', sound: '/iz/' }, { word: 'watches', sound: '/iz/' }, { word: 'catches', sound: '/iz/' },
                 { word: 'dresses', sound: '/iz/' }, { word: 'finishes', sound: '/iz/' }, { word: 'guesses', sound: '/iz/' },
                 { word: 'teaches', sound: '/iz/' }, { word: 'fixes', sound: '/iz/' }, { word: 'buzzes', sound: '/iz/' },
@@ -308,6 +309,28 @@
                 { word: 'reaches', sound: '/iz/' }, { word: 'touches', sound: '/iz/' }, { word: 'misses', sound: '/iz/' },
                 { word: 'mixes', sound: '/iz/' }, { word: 'boxes', sound: '/iz/' }, { word: 'searches', sound: '/iz/' },
                 { word: 'chooses', sound: '/iz/' }, { word: 'loses', sound: '/iz/' }, { word: 'judges', sound: '/iz/' },
+                { word: 'praises', sound: '/iz/' }, { word: 'surprises', sound: '/iz/' }, { word: 'raises', sound: '/iz/' },
+                { word: 'advises', sound: '/iz/' }, { word: 'realizes', sound: '/iz/' }, { word: 'organizes', sound: '/iz/' },
+                { word: 'promises', sound: '/iz/' }, { word: 'arranges', sound: '/iz/' }, { word: 'manages', sound: '/iz/' },
+                { word: 'changes', sound: '/iz/' },
+                
+                // Phát âm là /s/
+                { word: 'works', sound: '/s/' }, { word: 'eats', sound: '/s/' }, { word: 'walks', sound: '/s/' },
+                { word: 'sleeps', sound: '/s/' }, { word: 'stops', sound: '/s/' }, { word: 'takes', sound: '/s/' },
+                { word: 'gets', sound: '/s/' }, { word: 'makes', sound: '/s/' }, { word: 'looks', sound: '/s/' },
+                { word: 'jumps', sound: '/s/' }, { word: 'cuts', sound: '/s/' }, { word: 'sits', sound: '/s/' },
+                { word: 'thinks', sound: '/s/' }, { word: 'hopes', sound: '/s/' }, { word: 'likes', sound: '/s/' },
+                { word: 'keeps', sound: '/s/' }, { word: 'drops', sound: '/s/' }, { word: 'laughs', sound: '/s/' },
+                { word: 'cooks', sound: '/s/' }, { word: 'talks', sound: '/s/' }, { word: 'helps', sound: '/s/' },
+                { word: 'wants', sound: '/s/' }, { word: 'escapes', sound: '/s/' }, { word: 'hates', sound: '/s/' },
+                { word: 'hits', sound: '/s/' }, { word: 'lifts', sound: '/s/' }, { word: 'waits', sound: '/s/' },
+                { word: 'acts', sound: '/s/' }, { word: 'asks', sound: '/s/' }, { word: 'drinks', sound: '/s/' },
+                { word: 'puts', sound: '/s/' }, { word: 'meets', sound: '/s/' }, { word: 'writes', sound: '/s/' },
+                { word: 'gets', sound: '/s/' }, { word: 'sits', sound: '/s/' }, { word: 'hits', sound: '/s/' },
+                { word: 'keeps', sound: '/s/' }, { word: 'reports', sound: '/s/' }, { word: 'develops', sound: '/s/' },
+                { word: 'accepts', sound: '/s/' }, { word: 'looks', sound: '/s/' }, { word: 'stops', sound: '/s/' },
+                
+                // Phát âm là /z/
                 { word: 'sells', sound: '/z/' }, { word: 'loves', sound: '/z/' }, { word: 'lives', sound: '/z/' },
                 { word: 'plays', sound: '/z/' }, { word: 'comes', sound: '/z/' }, { word: 'runs', sound: '/z/' },
                 { word: 'drives', sound: '/z/' }, { word: 'sees', sound: '/z/' }, { word: 'builds', sound: '/z/' },
@@ -316,23 +339,10 @@
                 { word: 'hugs', sound: '/z/' }, { word: 'wears', sound: '/z/' }, { word: 'opens', sound: '/z/' },
                 { word: 'reads', sound: '/z/' }, { word: 'feels', sound: '/z/' }, { word: 'hears', sound: '/z/' },
                 { word: 'shows', sound: '/z/' }, { word: 'tries', sound: '/z/' }, { word: 'travels', sound: '/z/' },
-                { word: 'hears', sound: '/z/' }, { word: 'studies', sound: '/z/' }, { word: 'says', sound: '/z/' },
-                { word: 'needs', sound: '/z/' }, { word: 'gives', sound: '/z/' }, { word: 'starts', sound: '/z/' },
-                { word: 'holds', sound: '/z/' }, { word: 'helps', sound: '/z/' }, { word: 'writes', sound: '/z/' },
-                { word: 'works', sound: '/s/' }, { word: 'eats', sound: '/s/' }, { word: 'walks', sound: '/s/' },
-                { word: 'sleeps', sound: '/s/' }, { word: 'stops', sound: '/s/' }, { word: 'takes', sound: '/s/' },
-                { word: 'gets', sound: '/s/' }, { word: 'makes', sound: '/s/' }, { word: 'looks', sound: '/s/' },
-                { word: 'jumps', sound: '/s/' }, { word: 'cuts', sound: '/s/' }, { word: 'sits', sound: '/s/' },
-                { word: 'thinks', sound: '/s/' }, { word: 'hopes', sound: '/s/' }, { word: 'likes', sound: '/s/' },
-                { word: 'keeps', sound: '/s/' }, { word: 'drops', sound: '/s/' }, { word: 'laughs', sound: '/s/' },
-                { word: 'cooks', sound: '/s/' }, { word: 'talks', sound: '/s/' }, { word: 'helps', sound: '/s/' },
-                { word: 'wants', sound: '/s/' }, { word: 'dances', sound: '/iz/' }, { word: 'escapes', sound: '/s/' },
-                { word: 'hates', sound: '/s/' }, { word: 'hits', sound: '/s/' }, { word: 'lifts', sound: '/s/' },
-                { word: 'waits', sound: '/s/' }, { word: 'acts', sound: '/s/' }, { word: 'laughs', sound: '/s/' },
-                { word: 'asks', sound: '/s/' }, { word: 'drinks', sound: '/s/' }, { word: 'looks', sound: '/s/' },
-                { word: 'gets', sound: '/s/' }, { word: 'puts', sound: '/s/' }, { word: 'meets', sound: '/s/' },
-                { word: 'sits', sound: '/s/' }, { word: 'hits', sound: '/s/' }, { word: 'writes', sound: '/s/' },
-                { word: 'wants', sound: '/s/' }
+                { word: 'studies', sound: '/z/' }, { word: 'says', sound: '/z/' }, { word: 'needs', sound: '/z/' },
+                { word: 'gives', sound: '/z/' }, { word: 'holds', sound: '/z/' }, { word: 'agrees', sound: '/z/' },
+                { word: 'believes', sound: '/z/' }, { word: 'closes', sound: '/z/' }, { word: 'plans', sound: '/z/' },
+                { word: 'learns', sound: '/z/' }, { word: 'grows', sound: '/z/' }, { word: 'gains', sound: '/z/' }
             ];
 
             let shuffledVerbs = [];
